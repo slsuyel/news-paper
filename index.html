@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="https://cdn.pixabay.com/photo/2022/05/19/04/27/mountain-7206562_960_720.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>News site </title>
+  <link rel="stylesheet" href="./src/assets/loader.css">
+</head>
+
+<body>
+
+  <div class="loader-container" id="loader">
+    <div class="loader"></div>
+  </div>
+  
+  
+  <div id="root"> </div>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById('loader').classList.add('hide');
+      document.getElementById('root').style.opacity ='1'
+
+    }, 2000);
+
+  </script>
+
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
+</html>

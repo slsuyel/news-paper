@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Tiro+Bangla:ital@0;1&display=swap");
+* {
+  font-family: "Tiro Bangla", serif;
+}
+* a {
+  text-decoration: none;
+  color: black;
+}
+.national-news {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+.background {
+  background: rgba(0, 81, 151, 0.22);
+}
+.aaaa {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+.bggg {
+  background-color: #b1aeae7a;
+}
+.quoates-descrip {
+  background: #e8f0fe;
+  font-size: 18px;
+  margin: 20px 20px 20px 0px;
+  font-weight: 500;
+  height: 400px;
+}
+.limited-tags {
+  overflow-y: auto;
+}
+.f-14 {
+  font-size: 14px;
+}
+
+.add-side-img {
+  height: 118px;
+}
+
+.trigger {
+  width: 15%;
+  background: red;
+  color: white;
+}
+
+
+@media screen and (max-width: 480px) {
+  .aa {
+    order: 1 !important;
+  }
+  .none {
+    display: none;
+  }
+  .national-news {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+  }
+  .carousel-caption {
+    font-size: 8px;
+    width: 50%;
+    margin: auto;
+  }
+  .trigger {
+    width: 26%;
+    font-size: 11px;
+}
+}
