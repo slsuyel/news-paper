@@ -7,12 +7,29 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { FormControl } from "react-bootstrap";
 import StockTicker from "./StockTicker";
+import { useEffect, useState } from "react";
+import DateTime from "./DateTime";
 
 function Header() {
-  
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch('https://www.alokitotetulia.com/api/get/all/latest/news');
+        const data = await res.json();
+        setData(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchData();
+  }, []);
+
+
   return (
     <>
-      <Navbar bg="light" expand="lg">
+      <DateTime />
+      <Navbar bg="light" expand="lg" className="pt-0">
         <Navbar.Brand as={Link} className="mb-2  pt-0" to="/">
           <img
             src="https://www.alokitotetulia.com/public/cropped-cropped-Alokitotetulia.png.png"
@@ -116,7 +133,7 @@ function Header() {
         </Navbar.Collapse>
       </Navbar>
 
-      <StockTicker />
+      <StockTicker data={data} />
     </>
   );
 }

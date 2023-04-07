@@ -1,5 +1,6 @@
 import React from "react";
-function StockTicker() {
+import { Link } from "react-router-dom";
+function StockTicker({ data }) {
     return (
         <div className="align-items-center bg-info d-flex mb-3"  >
             <div className="trigger p-2" >
@@ -9,10 +10,7 @@ function StockTicker() {
                 className=""
                 behavior="scroll"
                 direction="left"
-                onMouseOver={(e) => e.target.stop()}
-                onMouseOut={(e) => e.target.start()}
-            >
-             <a href="#" className="notice-a">   তেঁতুলিয়ায় বিশ চাষির হাতে ১০ প্রজাতির নেদারল্যান্ডের টিউলিপ </a> <span>✧</span>
+            >  {   data.latestPost && data.latestPost.map((dt) => <Link to={`post/${dt.id}`} >  <span>✧</span> {dt.title} </Link>)  }
             </marquee>
         </div>
     )

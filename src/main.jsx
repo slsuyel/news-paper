@@ -1,4 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
@@ -7,6 +8,8 @@ import Home from "./components/Home";
 import App from "./App";
 import Spinners from "./components/Spinners";
 import SingleNews from "./components/SingleNews";
+import Category from "./components/Category";
+import DateTime from "./components/DateTime";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +30,10 @@ const router = createBrowserRouter([
         element: <SingleNews />,
         loader: ({ params }) =>
         fetch(`https://www.alokitotetulia.com/api/update/blog/${params.postId}`),
+      },
+      {
+        path: "category",
+        element : <DateTime/>
       },
       
     ],
